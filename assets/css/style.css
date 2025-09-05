@@ -1,0 +1,29 @@
+/* Estilo principal - tema rosa e branco */
+:root{
+    --pink: #FFB6C1;
+    --white: #ffffff;
+    --muted: #f8f4f6;
+    --accent: #ff8fb1;
+    --text: #333;
+}
+
+*{box-sizing:border-box}
+body{font-family:'Poppins', 'Roboto', sans-serif;background:var(--muted);color:var(--text);margin:0;padding:20px}
+.container{max-width:1100px;margin:0 auto;background:var(--white);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .brand{font-size:20px;font-weight:700;color:var(--pink)}
+nav a{margin-left:12px;color:var(--text);text-decoration:none}
+
+h1{color:var(--pink);margin:0}
+.card{background:linear-gradient(180deg,var(--white),#fff);padding:16px;border-radius:10px;margin-bottom:16px}
+.form-row{display:flex;gap:12px;flex-wrap:wrap}
+.input, select{padding:10px;border-radius:8px;border:1px solid #eee;width:100%}
+button{background:var(--pink);color:var(--white);border:0;padding:10px 14px;border-radius:10px;cursor:pointer}
+button:hover{background:var(--accent)}
+.table{width:100%;border-collapse:collapse;margin-top:12px}
+.table th,.table td{padding:10px;border-bottom:1px solid #f1f1f1;text-align:left}
+.actions button{margin-right:6px;padding:6px 8px;font-size:14px}
+.rounded{border-radius:8px}
+.total-box{font-weight:700;padding:10px;background:#fff3f6;border-radius:8px}
+@media(max-width:700px){.form-row{flex-direction:column}}
