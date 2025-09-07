@@ -1,4 +1,3 @@
--- SQL para criar o banco de dados e as tabelas do sistema Lele da Cuca
 CREATE DATABASE IF NOT EXISTS lele_da_cuca DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE lele_da_cuca;
 
@@ -8,7 +7,6 @@ CREATE TABLE IF NOT EXISTS clientes (
   telefone VARCHAR(50) DEFAULT NULL,
   endereco VARCHAR(255) DEFAULT NULL
 ) ENGINE=InnoDB;
-
 
 CREATE TABLE IF NOT EXISTS categorias (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -41,5 +39,16 @@ CREATE TABLE IF NOT EXISTS itens_pedido (
   FOREIGN KEY (produto_id) REFERENCES produtos(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
+-- Nova tabela para usuários (compatível com o código: usuario / senha_hash)
+CREATE TABLE IF NOT EXISTS usuarios (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  usuario VARCHAR(100) NOT NULL UNIQUE,
+  senha_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- Inserir categorias exemplo
 INSERT INTO categorias (nome_categoria) VALUES ('Doces'), ('Salgados'), ('Bebidas');
+
+-- Inserir usuário de exemplo
+INSERT INTO usuarios (usuario, senha_hash) VALUES ('Manuela', '$2y$10$7wnf/AEZo6fDDyxsgqAEd.wC9ouDIlMOvHh3ATWJsuN9C0roQrkF.');

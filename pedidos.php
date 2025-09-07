@@ -50,7 +50,7 @@ $produtos = getProdutos($pdo);
         </div>
 
         <table class="table">
-            <thead><tr><th>Produto</th><th>Quantidade</th><th>Preço unit.</th><th>Subtotal</th><th></th></tr></thead>
+            <thead><tr><th>Produto</th><th>Quantidade</th><th>Preço</th><th>Subtotal</th><th></th></tr></thead>
             <tbody id="order-items-body"></tbody>
         </table>
 
